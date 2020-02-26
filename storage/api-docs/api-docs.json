@@ -1,0 +1,168 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Comments-API",
+        "contact": {
+            "name": "Support Team",
+            "email": "aymeric.vellinger@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/comment/{uuid}": {
+            "get": {
+                "operationId": "/comment",
+                "parameters": [
+                    {
+                        "name": "entity_uuid",
+                        "in": "path",
+                        "description": "The uuid of the entity",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all the entity comments",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "/comment",
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "description": "Delete all the entity Comments",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Comments has been successfully deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        },
+        "/comment": {
+            "get": {
+                "operationId": "/comment",
+                "responses": {
+                    "200": {
+                        "description": "Returns all comments as an array of Comments object",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            },
+            "put": {
+                "operationId": "/comment",
+                "parameters": [
+                    {
+                        "name": "Comments",
+                        "in": "query",
+                        "description": "The Comments to update",
+                        "required": true,
+                        "schema": {
+                            "type": "Object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Comment has been updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            },
+            "post": {
+                "operationId": "/comment",
+                "parameters": [
+                    {
+                        "name": "Comments",
+                        "in": "query",
+                        "description": "The Comments to add",
+                        "required": true,
+                        "schema": {
+                            "type": "Object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Comment as been created",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "/comment",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Delete Comment by id",
+                        "required": true,
+                        "schema": {
+                            "type": "Int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Comment has been successfully deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        }
+    }
+}
