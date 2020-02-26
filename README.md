@@ -1,28 +1,45 @@
-<<<<<<< HEAD
+
 # ifm_back
-=======
-# Lumen PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+#Lancer le serveur:
+-composer install
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+-php -S localhost:8000 -t public
 
-## Official Documentation
+#les routes
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+offre
+-
+params = 'id', 'entreprise','poste','ville','code_postal','presentation',
+                 'activite','description'
+                 
+get('/offer/{id}')
 
-## Contributing
+get('/offer')
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+post('/offer')
 
-## Security Vulnerabilities
+put('/offer')
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+delete('/offer');
 
-## License
+candidature
+-
+params =     'id', 'id_offre'
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> voila
+meme route qu'au dessus mais avec 'candidate' a la place de offer
+
+favoris
+-
+params =     'id', 'id_offre'
+
+meme route qu'au dessus mais avec 'favorite' a la place de offer
+
+profil
+-
+params =      'id', 'nom','prenom','ville','email','tel','type_contrat',
+                     'emploi_recherche','localisation','rayon','disponibilite',
+                     'ad_cv','ad_photo'
+
+meme route qu'au dessus mais avec 'profile' a la place de offer
+
